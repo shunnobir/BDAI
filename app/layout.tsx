@@ -3,7 +3,8 @@ import "@/app/globals.css";
 import Navbar from "../components/navbar";
 import {
   Poppins,
-  // PT_Serif
+  // PT_Serif,
+  Oswald,
 } from "next/font/google";
 import Footer from "../components/footer";
 
@@ -17,6 +18,14 @@ const poppins = Poppins({
   subsets: ["latin"],
   preload: true,
   style: ["normal", "italic"],
+});
+
+const oswald = Oswald({
+  weight: ["200", "300", "400", "500", "600", "700"],
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  preload: true,
+  style: ["normal"],
 });
 
 // const pt_serif = PT_Serif({
@@ -35,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased bg-background text-foreground`}
+        className={`${oswald.className} antialiased bg-background text-foreground`}
       >
         <Navbar />
         <main className="">{children}</main>

@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { Button } from "./ui/button";
 
 export type ObjectiveType = {
   key: string;
@@ -19,43 +20,30 @@ export type ObjectiveType = {
 
 function ObjectiveCard({ objective }: { objective: ObjectiveType }) {
   return (
-    <div className="p-5 group">
-      <div
-        className={cn(
-          "grid grid-cols-1 sm:grid-cols-3 max-w-[650px] gap-5 bg-white min-h-60 items-center",
-          objective.className
-        )}
-      >
-        <div className="p-5 border borde-solid rounded-full size-32 border-current sm:group-odd:order-2 self-center justify-self-center">
-          <objective.Icon className="size-20 mx-auto" />
-        </div>
-        <div className="flex flex-col col-span-2 gap-5 sm:group-odd:order-1">
-          <div className="flex items-center gap-2.5 w-72">
-            <span className="text-6xl font-bold"> {objective.index}</span>
-            <span className="uppercase font-medium">{objective.name}</span>
-          </div>
-          <span className="text-foreground text-justify">
-            {objective.description}
-          </span>
-          <Link
-            href={`/publications?objective=${objective.key}`}
-            className="mt-10 inline-flex items-center gap-1.5 text-primary hover:underline"
-          >
-            See Publications <ArrowRight className="size-6" />
-          </Link>
-        </div>
-      </div>
-      {/* <div
-        className={cn(
-          "absolute hidden flex-col gap-5 p-5 group-hover:flex w-0 h-0 top-0 left-0 group-hover:w-full group-hover:h-auto group-hover:min-h-full group-hover:z-10 group-hover:shadow-md",
-          objective.className
-        )}
-      >
-        <span className="text-2xl font-bold text-white/60">
-          Objective {objective.index}
+    <div
+      className={cn(
+        "px-5 py-10 group relative text-white w-72 flex flex-col gap-5",
+        objective.className
+      )}
+    >
+      <objective.Icon className="size-12 mx-auto" />
+      <div className="flex items-center gap-2.5">
+        <span className="text-6xl font-bold uppercase text-left">
+          {objective.index}
         </span>
-        <span className="text-sm">{objective.description}</span>
-      </div> */}
+        <span className="uppercase text-lg font-medium hyphens-auto" lang="en">
+          {objective.name}
+        </span>
+      </div>
+      <span className="leading-[160%] text-lg font-light">
+        {objective.description}
+      </span>
+      <Link
+        href={`/publications?objective=${objective.key}`}
+        className="inline-flex items-start border-b w-fit border-transparent border-solid hover:border-current py-2 gap-1"
+      >
+        See Publications <ArrowRight strokeWidth={1.5} />
+      </Link>
     </div>
   );
 }

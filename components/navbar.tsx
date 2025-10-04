@@ -11,16 +11,20 @@ function Navbar() {
       href: "/",
     },
     {
+      name: "Objectives",
+      href: "/#objectives",
+    },
+    {
       name: "Team",
-      href: "/team",
+      href: "/#team",
     },
     {
       name: "Publications",
-      href: "/publications",
+      href: "/#publications",
     },
     {
       name: "Contacts",
-      href: "/contacts",
+      href: "/#contacts",
     },
   ];
   return (
@@ -31,7 +35,7 @@ function Navbar() {
         </Link>
         {/* <Searchbar className="hidden md:flex" /> */}
         <HamburgerMenu links={navLinks} className="" />
-        <ul className="hidden sm:flex text-sm list-none gap-4">
+        <ul className="hidden sm:flex list-none gap-4">
           {navLinks.map((link) => (
             <li
               key={link.name}

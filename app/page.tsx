@@ -1,5 +1,6 @@
 import ObjectiveCard, { ObjectiveType } from "@/components/objective-card";
 import SectionHeader from "@/components/section-header";
+import TeamMemberCard, { TeamMember } from "@/components/team-member-card";
 import {
   AcademicCapIcon,
   BeakerIcon,
@@ -20,7 +21,7 @@ export default function Home() {
         "Develop an open data quality measurement framework to assess the status-quo of Bangladesh (BD) open data.",
       Icon: DocumentChartBarIcon,
       index: 1,
-      className: "text-red-500",
+      className: "bg-red-600",
     },
     {
       key: "ob2",
@@ -29,7 +30,7 @@ export default function Home() {
         "Develop a full-fledged digital data ecosystem to produce, collect, manage, integrate, publish, and analyze sustainable, meaningful, accessible, reusable, and traceable (SMART) BD data. The goal is to ensure that the data is semantically enriched, accessible, analytically compatible, self-explorable, and interoperable.",
       Icon: GlobeAltIcon,
       index: 2,
-      className: "text-blue-500",
+      className: "bg-blue-600",
     },
     {
       key: "ob3",
@@ -38,7 +39,7 @@ export default function Home() {
         "Produce sector-specific knowledge graphs (KGs) following the FAIR (Findability, Accessibility, Interoperability, and Reusability) principles. Current focus areas include socio-economic, agriculture, healthcare, tourism, and education sectors, aiming to support SDGs 2, 4, 9, 10, and 17.",
       Icon: BeakerIcon,
       index: 3,
-      className: "text-green-500",
+      className: "bg-green-600",
     },
     {
       key: "ob4",
@@ -47,7 +48,7 @@ export default function Home() {
         "Enable intra- and inter-sector KGs descriptive, predictive, and prescriptive analytics, and validate large language models (LLMs) through knowledge graphs.",
       Icon: ChartBarIcon,
       index: 4,
-      className: "text-yellow-500",
+      className: "bg-orange-600",
     },
     {
       key: "ob5",
@@ -56,7 +57,7 @@ export default function Home() {
         "Develop intuitive AI-powered tools with natural language interfaces and intelligent agents, leveraging KGs and LLMs to assist farmers, educators, healthcare providers, policymakers, and business professionals in making data-driven decisions easily.",
       Icon: SparklesIcon,
       index: 5,
-      className: "text-purple-500",
+      className: "bg-purple-600",
     },
     {
       key: "ob6",
@@ -65,7 +66,54 @@ export default function Home() {
         "Conduct comprehensive workshops, training programs, publications, and engagement activities to educate and build capacity among policymakers, researchers, educators, and practitioners on the applications and benefits of the SMART data ecosystem, knowledge graphs, and AI-driven analytics.",
       Icon: AcademicCapIcon,
       index: 6,
-      className: "text-pink-500",
+      className: "bg-pink-600",
+    },
+  ];
+
+  const teamMembers: TeamMember[] = [
+    {
+      img: "https://firebasestorage.googleapis.com/v0/b/bike-csecu-server.appspot.com/o/images%2Fresearchers%2Fimage-1738823888977-ghnkko.jpg?alt=media&token=d542e2bc-aaff-4330-a03a-b62114117c80",
+      name: "Dr. Rudra Pratap Deb Nath",
+      education: "Ph.D (Denmark), Ph.D (Spain)",
+      designation: "Associate Professor",
+      department: "Department of Computer Science and Engineering",
+      institute: "University of Chittagong",
+      role: "Sub-Project Manager",
+      email: "rudra@cu.ac.bd",
+      website: "https://cu.ac.bd/public_profile/index.php?ein=5168",
+    },
+    {
+      img: "https://cu.ac.bd/assets/image/faculty_staff_users/935_Y8JBVC74VP.jpg",
+      name: "Dr. Abu Nowshed Chy",
+      education: "Ph.D (Japan)",
+      designation: "Assistant Professor",
+      department: "Department of Computer Science and Engineering",
+      institute: "University of Chittagong",
+      role: "Assistant Sub-Project Manager",
+      email: "nowshed@cu.ac.bd",
+      website: "https://cu.ac.bd/public_profile/index.php?ein=5905",
+    },
+    {
+      img: "https://cu.ac.bd/assets/image/faculty_staff_users/40_Q11H4CDWTD.jpg",
+      name: "Dr. Md. Mahbubul Islam",
+      education: "Ph.D (South Korea)",
+      designation: "Associate Professor",
+      department: "Department of Computer Science and Engineering",
+      institute: "University of Chittagong",
+      role: "Member",
+      email: "mahbubcse@cu.ac.bd",
+      website: "https://cu.ac.bd/public_profile/index.php?ein=5291",
+    },
+    {
+      img: "https://cu.ac.bd/assets/image/faculty_staff_users/45_8Z6DUQK4EF.jpg",
+      name: "Shima Chakraborty",
+      education: "MS (Engg.)",
+      designation: "Assistant Professor",
+      department: "Department of Computer Science and Engineering",
+      institute: "University of Chittagong",
+      role: "Member",
+      email: "shimacse@cu.ac.bd",
+      website: "https://cu.ac.bd/public_profile/index.php?ein=5295",
     },
   ];
 
@@ -92,81 +140,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5 items-center">
+      <section
+        className="fit-frame pt-10 pb-10 flex flex-col gap-5 items-center"
+        id="objectives"
+      >
         <SectionHeader>Our Objectives</SectionHeader>
-        <div className="flex flex-col gap-5 justify-center">
+        <div className="flex flex-wrap gap-5 justify-center">
           {objectives.map((objective) => {
             return <ObjectiveCard key={objective.key} objective={objective} />;
           })}
         </div>
       </section>
 
-      {/* <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
-        <h1 className="text-3xl text-center font-medium">Components</h1>
-        <span className="text-center leading-7 tracking-wider text-sm">
-          The BDAI sub-project addresses the urgent need for sustainable,
-          meaningful, accessible, reusable, and traceable (SMART) data.
-          Currently, most data across different sectors in BD is static,
-          read-only, and aggregated, with challenges such as non-compliance with
-          FAIR principles, semantic heterogeneity, and limited analytical
-          compatibility. To resolve these issues, this project proposes an SMART
-          data ecosystem powered by KGs and LLMs to enable sustainable data
-          management and AI-driven insights across socio-economics, agriculture,
-          healthcare, tourism, and education.
-        </span>
+      <section
+        className="fit-frame pt-10 pb-10 flex flex-col gap-5 items-center"
+        id="team"
+      >
+        <SectionHeader>Team</SectionHeader>
+        <div className="flex flex-wrap gap-5 justify-center">
+          {teamMembers.map((member) => {
+            return <TeamMemberCard member={member} key={member.email} />;
+          })}
+        </div>
       </section>
-
-      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
-        <h1 className="text-3xl text-center font-medium">Activities</h1>
-        <span className="text-center leading-7 tracking-wider text-sm">
-          BDAI’s key activities include collecting data, developing an open data
-          quality measurement framework, building an SMART data ecosystem, and
-          producing FAIR-compliant sectoral KGs. Additional efforts include
-          enabling cross-sector analytics, designing AI tools with natural
-          language interfaces and LLMs, and conducting workshops, training
-          programs, and publications to build stakeholder capacity.
-        </span>
-      </section>
-
-      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
-        <h1 className="text-3xl text-center font-medium">Methods</h1>
-        <span className="text-center leading-7 tracking-wider text-sm">
-          Big data, semantic web technologies, FAIR principles, and KGs will be
-          utilized for data integration and semantic enrichment. Advanced
-          analytics will leverage LLMs, machine learning, and graph analytics.
-          AI tools with natural language interfaces will ensure data
-          accessibility and usability.
-        </span>
-      </section>
-
-      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
-        <h1 className="text-3xl text-center font-medium">Expected Results</h1>
-        <span className="text-center leading-7 tracking-wider text-sm">
-          BDAI will deliver a functional SMART data ecosystem, enriched KGs,
-          intuitive AI tools, and a comprehensive capacity-building framework.
-        </span>
-      </section>
-
-      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
-        <h1 className="text-3xl text-center font-medium">Outcomes</h1>
-        <span className="text-center leading-7 tracking-wider text-sm">
-          The initiative will empower stakeholders with actionable, data-driven
-          tools while providing researchers with guidelines for adopting a
-          KG-centric integration paradigm.
-        </span>
-      </section>
-
-      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
-        <h1 className="text-3xl text-center font-medium">Broad Impact</h1>
-        <span className="text-center leading-7 tracking-wider text-sm">
-          BDAI will transform data management in Bangladesh, promoting a
-          sustainable, interoperable, and AI-driven ecosystem. This will enhance
-          food security (SDG 2), quality education (SDG 4), digital innovation
-          (SDG 9), equitable data access (SDG 10), and cross-sector
-          collaboration (SDG 17), driving economic growth and evidence-based
-          decision-making.
-        </span>
-      </section> */}
     </div>
   );
 }
