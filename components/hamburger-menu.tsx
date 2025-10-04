@@ -41,7 +41,11 @@ function HamburgerMenu({
             </li>
             <Separator className="mb-3" />
             {links.map((link) => (
-              <Link href={link.href} key={link.name}>
+              <Link
+                href={link.href}
+                key={link.name}
+                onClick={() => setOpen(false)}
+              >
                 <li className="uppercase w-fit hover:border-b-4 hover:border-solid hover:border-primary py-2 p ml-5 cursor-pointer">
                   {link.name}
                 </li>
