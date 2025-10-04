@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import Navbar from "../components/navbar";
-import { Poppins, PT_Serif } from "next/font/google";
+import {
+  Poppins,
+  // PT_Serif
+} from "next/font/google";
 import Footer from "../components/footer";
-import { SidebarProvider } from "@/components/ui/sidebar";
 
 export const metadata: Metadata = {
   title: "BDAI Project",
@@ -17,13 +19,13 @@ const poppins = Poppins({
   style: ["normal", "italic"],
 });
 
-const pt_serif = PT_Serif({
-  weight: ["400", "700"],
-  variable: "--font-pt-serif",
-  subsets: ["latin"],
-  preload: true,
-  style: ["normal", "italic"],
-});
+// const pt_serif = PT_Serif({
+//   weight: ["400", "700"],
+//   variable: "--font-pt-serif",
+//   subsets: ["latin"],
+//   preload: true,
+//   style: ["normal", "italic"],
+// });
 
 export default function RootLayout({
   children,

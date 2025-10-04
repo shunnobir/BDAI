@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 export type ObjectiveType = {
@@ -36,12 +37,12 @@ function ObjectiveCard({ objective }: { objective: ObjectiveType }) {
           <span className="text-foreground text-justify">
             {objective.description}
           </span>
-          <a
+          <Link
             href={`/publications?objective=${objective.key}`}
             className="mt-10 inline-flex items-center gap-1.5 text-primary hover:underline"
           >
             See Publications <ArrowRight className="size-6" />
-          </a>
+          </Link>
         </div>
       </div>
       {/* <div

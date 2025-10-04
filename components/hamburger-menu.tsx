@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { AlignJustify, X } from "lucide-react";
 import { Button } from "./ui/button";
 import Logo from "./logo";
 import Searchbar from "./searchbar";
 import { cn } from "@/lib/utils";
 import { Separator } from "./ui/separator";
+import Link from "next/link";
 
 function HamburgerMenu({
   links,
@@ -19,7 +20,7 @@ function HamburgerMenu({
 
   return (
     <div className={cn("sm:hidden", className)}>
-      <Button variant="ghost" onClick={(e) => setOpen((op) => !op)}>
+      <Button variant="ghost" onClick={() => setOpen((op) => !op)}>
         <AlignJustify />
       </Button>
       {open ? (
@@ -40,11 +41,11 @@ function HamburgerMenu({
             </li>
             <Separator className="mb-3" />
             {links.map((link) => (
-              <a href={link.href} key={link.name}>
+              <Link href={link.href} key={link.name}>
                 <li className="uppercase text-sm w-fit hover:border-b-4 hover:border-solid hover:border-primary py-2 p ml-5 cursor-pointer">
                   {link.name}
                 </li>
-              </a>
+              </Link>
             ))}
           </ul>
         </div>

@@ -9,6 +9,7 @@ import {
   SparklesIcon,
 } from "@heroicons/react/24/solid";
 import { Dot } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   const objectives: ObjectiveType[] = [
@@ -74,9 +75,9 @@ export default function Home() {
       <section className="w-full bg-primary text-primary-foreground py-28">
         <div className="fit-frame flex flex-col items-center gap-5">
           <span className="text-center text-muted">
-            <a href="https://heat.ugc.gov.bd/" className="hover:underline">
+            <Link href="https://heat.ugc.gov.bd/" className="hover:underline">
               Higher Education Acceleration and Transformation (HEAT)
-            </a>{" "}
+            </Link>{" "}
             2025 Winning Project
           </span>
           <span className="text-3xl sm:text-4xl md:text-5xl text-center leading-[140%]">
