@@ -24,10 +24,14 @@ function HamburgerMenu({
         <AlignJustify />
       </Button>
       {open ? (
-        <div className="absolute w-full h-full right-0 top-0">
+        <div className="fixed pointer-events-none z-10 w-full h-full right-0 top-0">
           <div
-            className="w-full h-full bg-foreground/30"
-            onClick={() => setOpen(false)}
+            className="w-full h-full bg-foreground/30 pointer-events-none backdrop-blur-xs"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setOpen(false);
+            }}
           />
           <ul className="absolute top-0 right-0 h-full z-10 w-[280px] list-none flex flex-col gap-4 bg-background shadow-md">
             <li className="w-full flex justify-between items-center pt-2 px-5">
