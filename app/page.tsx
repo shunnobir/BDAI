@@ -1,103 +1,171 @@
-import Image from "next/image";
+import ObjectiveCard, { ObjectiveType } from "@/components/objective-card";
+import SectionHeader from "@/components/section-header";
+import {
+  AcademicCapIcon,
+  BeakerIcon,
+  ChartBarIcon,
+  DocumentChartBarIcon,
+  GlobeAltIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/solid";
+import { Dot } from "lucide-react";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const objectives: ObjectiveType[] = [
+    {
+      key: "ob1",
+      name: "Data Quality Measurement Framework",
+      description:
+        "Develop an open data quality measurement framework to assess the status-quo of Bangladesh (BD) open data.",
+      Icon: DocumentChartBarIcon,
+      index: 1,
+      className: "text-red-500",
+    },
+    {
+      key: "ob2",
+      name: "SMART Data Ecosystem Development",
+      description:
+        "Develop a full-fledged digital data ecosystem to produce, collect, manage, integrate, publish, and analyze sustainable, meaningful, accessible, reusable, and traceable (SMART) BD data. The goal is to ensure that the data is semantically enriched, accessible, analytically compatible, self-explorable, and interoperable.",
+      Icon: GlobeAltIcon,
+      index: 2,
+      className: "text-blue-500",
+    },
+    {
+      key: "ob3",
+      name: "FAIR Sector-specific Knowledge Graphs",
+      description:
+        "Produce sector-specific knowledge graphs (KGs) following the FAIR (Findability, Accessibility, Interoperability, and Reusability) principles. Current focus areas include socio-economic, agriculture, healthcare, tourism, and education sectors, aiming to support SDGs 2, 4, 9, 10, and 17.",
+      Icon: BeakerIcon,
+      index: 3,
+      className: "text-green-500",
+    },
+    {
+      key: "ob4",
+      name: "KG-driven Analytics and LLM Validation",
+      description:
+        "Enable intra- and inter-sector KGs descriptive, predictive, and prescriptive analytics, and validate large language models (LLMs) through knowledge graphs.",
+      Icon: ChartBarIcon,
+      index: 4,
+      className: "text-yellow-500",
+    },
+    {
+      key: "ob5",
+      name: "AI-powered Decision Support Tools",
+      description:
+        "Develop intuitive AI-powered tools with natural language interfaces and intelligent agents, leveraging KGs and LLMs to assist farmers, educators, healthcare providers, policymakers, and business professionals in making data-driven decisions easily.",
+      Icon: SparklesIcon,
+      index: 5,
+      className: "text-purple-500",
+    },
+    {
+      key: "ob6",
+      name: "Capacity Building and Outreach",
+      description:
+        "Conduct comprehensive workshops, training programs, publications, and engagement activities to educate and build capacity among policymakers, researchers, educators, and practitioners on the applications and benefits of the SMART data ecosystem, knowledge graphs, and AI-driven analytics.",
+      Icon: AcademicCapIcon,
+      index: 6,
+      className: "text-pink-500",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="">
+      {/* Hero Banner */}
+      <section className="w-full bg-primary text-primary-foreground py-28">
+        <div className="fit-frame flex flex-col items-center gap-5">
+          <span className="text-center text-muted">
+            <a href="https://heat.ugc.gov.bd/" className="hover:underline">
+              Higher Education Acceleration and Transformation (HEAT)
+            </a>{" "}
+            2025 Winning Project
+          </span>
+          <span className="text-3xl sm:text-4xl md:text-5xl text-center leading-[140%]">
+            BDAI: Leveraging BanglaDesh Sectoral Knowledge Graph and Large
+            Language Modesl for Artificial Intelligence-Driven Insights
+          </span>
+          <div className="uppercase flex flex-row items-center gap-2">
+            <span className="text-center">Knowledge Graph</span> <Dot />{" "}
+            <span className="text-center">Large Language Model</span> <Dot />{" "}
+            <span className="text-center">Artificial Intelligence</span>{" "}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5 items-center">
+        <SectionHeader>Our Objectives</SectionHeader>
+        <div className="flex flex-col gap-5 justify-center">
+          {objectives.map((objective) => {
+            return <ObjectiveCard key={objective.key} objective={objective} />;
+          })}
+        </div>
+      </section>
+
+      {/* <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
+        <h1 className="text-3xl text-center font-medium">Components</h1>
+        <span className="text-center leading-7 tracking-wider text-sm">
+          The BDAI sub-project addresses the urgent need for sustainable,
+          meaningful, accessible, reusable, and traceable (SMART) data.
+          Currently, most data across different sectors in BD is static,
+          read-only, and aggregated, with challenges such as non-compliance with
+          FAIR principles, semantic heterogeneity, and limited analytical
+          compatibility. To resolve these issues, this project proposes an SMART
+          data ecosystem powered by KGs and LLMs to enable sustainable data
+          management and AI-driven insights across socio-economics, agriculture,
+          healthcare, tourism, and education.
+        </span>
+      </section>
+
+      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
+        <h1 className="text-3xl text-center font-medium">Activities</h1>
+        <span className="text-center leading-7 tracking-wider text-sm">
+          BDAI’s key activities include collecting data, developing an open data
+          quality measurement framework, building an SMART data ecosystem, and
+          producing FAIR-compliant sectoral KGs. Additional efforts include
+          enabling cross-sector analytics, designing AI tools with natural
+          language interfaces and LLMs, and conducting workshops, training
+          programs, and publications to build stakeholder capacity.
+        </span>
+      </section>
+
+      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
+        <h1 className="text-3xl text-center font-medium">Methods</h1>
+        <span className="text-center leading-7 tracking-wider text-sm">
+          Big data, semantic web technologies, FAIR principles, and KGs will be
+          utilized for data integration and semantic enrichment. Advanced
+          analytics will leverage LLMs, machine learning, and graph analytics.
+          AI tools with natural language interfaces will ensure data
+          accessibility and usability.
+        </span>
+      </section>
+
+      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
+        <h1 className="text-3xl text-center font-medium">Expected Results</h1>
+        <span className="text-center leading-7 tracking-wider text-sm">
+          BDAI will deliver a functional SMART data ecosystem, enriched KGs,
+          intuitive AI tools, and a comprehensive capacity-building framework.
+        </span>
+      </section>
+
+      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
+        <h1 className="text-3xl text-center font-medium">Outcomes</h1>
+        <span className="text-center leading-7 tracking-wider text-sm">
+          The initiative will empower stakeholders with actionable, data-driven
+          tools while providing researchers with guidelines for adopting a
+          KG-centric integration paradigm.
+        </span>
+      </section>
+
+      <section className="fit-frame pt-10 pb-10 flex flex-col gap-5">
+        <h1 className="text-3xl text-center font-medium">Broad Impact</h1>
+        <span className="text-center leading-7 tracking-wider text-sm">
+          BDAI will transform data management in Bangladesh, promoting a
+          sustainable, interoperable, and AI-driven ecosystem. This will enhance
+          food security (SDG 2), quality education (SDG 4), digital innovation
+          (SDG 9), equitable data access (SDG 10), and cross-sector
+          collaboration (SDG 17), driving economic growth and evidence-based
+          decision-making.
+        </span>
+      </section> */}
     </div>
   );
 }
