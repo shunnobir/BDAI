@@ -16,7 +16,7 @@ function Navbar() {
     },
     {
       name: "Team",
-      href: "/#team",
+      href: "/team",
     },
     {
       name: "Publications",
@@ -28,8 +28,8 @@ function Navbar() {
     },
   ];
   return (
-    <nav className="fit-frame py-4 border-b border-solid flex items-center gap-5">
-      <>
+    <header className="py-4 border-b border-solid">
+      <nav className="fit-frame flex items-center gap-5">
         <Link href="/" className="no-underline mr-auto">
           <Logo />
         </Link>
@@ -45,9 +45,9 @@ function Navbar() {
             </li>
           ))}
         </ul>
-      </>
-      <Searchbar className="hidden md:flex" />
-    </nav>
+        <Searchbar className="hidden md:flex" />
+      </nav>
+    </header>
   );
 }
 

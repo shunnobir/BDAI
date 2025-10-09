@@ -7,7 +7,10 @@ function SectionHeader({
   ...rest
 }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h1 className={cn("text-3xl text-center", className)} {...rest}>
+    <h1
+      className={cn("text-3xl text-center uppercase font-bold", className)}
+      {...rest}
+    >
       {children}
     </h1>
   );

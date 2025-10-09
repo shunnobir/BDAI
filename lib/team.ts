@@ -1,0 +1,48 @@
+import { TeamMember } from "@/types";
+
+export const teamMembers: TeamMember[] = [
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/bike-csecu-server.appspot.com/o/images%2Fresearchers%2Fimage-1738823888977-ghnkko.jpg?alt=media&token=d542e2bc-aaff-4330-a03a-b62114117c80",
+    name: "Dr. Rudra Pratap Deb Nath",
+    education: "Ph.D (Denmark), Ph.D (Spain)",
+    designation: "Associate Professor",
+    department: "Department of Computer Science and Engineering",
+    institute: "University of Chittagong",
+    role: "Sub-Project Manager",
+    email: "rudra@cu.ac.bd",
+    website: "https://cu.ac.bd/public_profile/index.php?ein=5168",
+  },
+  {
+    img: "https://cu.ac.bd/assets/image/faculty_staff_users/935_Y8JBVC74VP.jpg",
+    name: "Dr. Abu Nowshed Chy",
+    education: "Ph.D (Japan)",
+    designation: "Assistant Professor",
+    department: "Department of Computer Science and Engineering",
+    institute: "University of Chittagong",
+    role: "Assistant Sub-Project Manager",
+    email: "nowshed@cu.ac.bd",
+    website: "https://cu.ac.bd/public_profile/index.php?ein=5905",
+  },
+  {
+    img: "https://cu.ac.bd/assets/image/faculty_staff_users/40_Q11H4CDWTD.jpg",
+    name: "Dr. Md. Mahbubul Islam",
+    education: "Ph.D (South Korea)",
+    designation: "Associate Professor",
+    department: "Department of Computer Science and Engineering",
+    institute: "University of Chittagong",
+    role: "Member",
+    email: "mahbubcse@cu.ac.bd",
+    website: "https://cu.ac.bd/public_profile/index.php?ein=5291",
+  },
+  {
+    img: "https://cu.ac.bd/assets/image/faculty_staff_users/45_8Z6DUQK4EF.jpg",
+    name: "Shima Chakraborty",
+    education: "MS (Engg.)",
+    designation: "Assistant Professor",
+    department: "Department of Computer Science and Engineering",
+    institute: "University of Chittagong",
+    role: "Member",
+    email: "shimacse@cu.ac.bd",
+    website: "https://cu.ac.bd/public_profile/index.php?ein=5295",
+  },
+];

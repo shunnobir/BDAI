@@ -44,10 +44,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${oswald.className} antialiased bg-background text-foreground`}
+        className={`${oswald.className} antialiased bg-background text-foreground flex flex-col`}
       >
         <Navbar />
-        <main className="">{children}</main>
+        <div className="grow">{children}</div>
         <Footer />
       </body>
     </html>

@@ -1,6 +1,7 @@
 import ObjectiveCard, { ObjectiveType } from "@/components/objective-card";
 import SectionHeader from "@/components/section-header";
-import TeamMemberCard, { TeamMember } from "@/components/team-member-card";
+import TeamMemberCard from "@/components/team-member-card";
+import { teamMembers } from "@/lib/team";
 import {
   AcademicCapIcon,
   BeakerIcon,
@@ -70,53 +71,6 @@ export default function Home() {
     },
   ];
 
-  const teamMembers: TeamMember[] = [
-    {
-      img: "https://firebasestorage.googleapis.com/v0/b/bike-csecu-server.appspot.com/o/images%2Fresearchers%2Fimage-1738823888977-ghnkko.jpg?alt=media&token=d542e2bc-aaff-4330-a03a-b62114117c80",
-      name: "Dr. Rudra Pratap Deb Nath",
-      education: "Ph.D (Denmark), Ph.D (Spain)",
-      designation: "Associate Professor",
-      department: "Department of Computer Science and Engineering",
-      institute: "University of Chittagong",
-      role: "Sub-Project Manager",
-      email: "rudra@cu.ac.bd",
-      website: "https://cu.ac.bd/public_profile/index.php?ein=5168",
-    },
-    {
-      img: "https://cu.ac.bd/assets/image/faculty_staff_users/935_Y8JBVC74VP.jpg",
-      name: "Dr. Abu Nowshed Chy",
-      education: "Ph.D (Japan)",
-      designation: "Assistant Professor",
-      department: "Department of Computer Science and Engineering",
-      institute: "University of Chittagong",
-      role: "Assistant Sub-Project Manager",
-      email: "nowshed@cu.ac.bd",
-      website: "https://cu.ac.bd/public_profile/index.php?ein=5905",
-    },
-    {
-      img: "https://cu.ac.bd/assets/image/faculty_staff_users/40_Q11H4CDWTD.jpg",
-      name: "Dr. Md. Mahbubul Islam",
-      education: "Ph.D (South Korea)",
-      designation: "Associate Professor",
-      department: "Department of Computer Science and Engineering",
-      institute: "University of Chittagong",
-      role: "Member",
-      email: "mahbubcse@cu.ac.bd",
-      website: "https://cu.ac.bd/public_profile/index.php?ein=5291",
-    },
-    {
-      img: "https://cu.ac.bd/assets/image/faculty_staff_users/45_8Z6DUQK4EF.jpg",
-      name: "Shima Chakraborty",
-      education: "MS (Engg.)",
-      designation: "Assistant Professor",
-      department: "Department of Computer Science and Engineering",
-      institute: "University of Chittagong",
-      role: "Member",
-      email: "shimacse@cu.ac.bd",
-      website: "https://cu.ac.bd/public_profile/index.php?ein=5295",
-    },
-  ];
-
   return (
     <div className="">
       {/* Hero Banner */}
@@ -128,7 +82,7 @@ export default function Home() {
             </Link>{" "}
             2025 Winning Project
           </span>
-          <span className="text-3xl sm:text-4xl md:text-5xl text-center leading-[140%]">
+          <span className="text-3xl sm:text-4xl md:text-5xl text-center uppercase leading-[140%]">
             BDAI: Leveraging BanglaDesh Sectoral Knowledge Graph and Large
             Language Modesl for Artificial Intelligence-Driven Insights
           </span>
@@ -148,18 +102,6 @@ export default function Home() {
         <div className="flex flex-wrap gap-5 justify-center">
           {objectives.map((objective) => {
             return <ObjectiveCard key={objective.key} objective={objective} />;
-          })}
-        </div>
-      </section>
-
-      <section
-        className="fit-frame pt-10 pb-10 flex flex-col gap-5 items-center"
-        id="team"
-      >
-        <SectionHeader>Team</SectionHeader>
-        <div className="flex flex-wrap gap-5 justify-center">
-          {teamMembers.map((member) => {
-            return <TeamMemberCard member={member} key={member.email} />;
           })}
         </div>
       </section>
